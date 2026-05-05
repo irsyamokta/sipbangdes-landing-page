@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SIPBANGDES Design System
+   Primary:   #163C74  -> hsl(214 68% 27%)
+   Secondary: #EEBD2B  -> hsl(44 86% 55%)
+   Alternate: #355E98  -> hsl(214 49% 40%)
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 35% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 35% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 35% 15%;
+
+    --primary: 214 68% 27%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 214 60% 40%;
+
+    --secondary: 44 86% 55%;
+    --secondary-foreground: 214 68% 18%;
+
+    --alternate: 214 49% 40%;
+    --alternate-foreground: 0 0% 100%;
+
+    --muted: 214 30% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 44 86% 95%;
+    --accent-foreground: 214 68% 27%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 25% 90%;
+    --input: 214 25% 90%;
+    --ring: 214 68% 27%;
+
+    --radius: 0.875rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(214 68% 27%), hsl(214 60% 40%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 68% 27%) 0%, hsl(214 49% 40%) 60%, hsl(214 60% 50%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(44 86% 55%), hsl(38 92% 60%));
+    --gradient-soft: linear-gradient(180deg, hsl(214 40% 98%) 0%, hsl(0 0% 100%) 100%);
+
+    --shadow-sm: 0 2px 8px -2px hsl(214 68% 27% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(214 68% 27% / 0.15);
+    --shadow-lg: 0 24px 48px -16px hsl(214 68% 27% / 0.25);
+    --shadow-glow: 0 0 60px hsl(44 86% 55% / 0.35);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .gradient-primary { background: var(--gradient-primary); }
+  .gradient-hero    { background: var(--gradient-hero); }
+  .gradient-gold    { background: var(--gradient-gold); }
+  .gradient-soft    { background: var(--gradient-soft); }
+
+  .shadow-elegant { box-shadow: var(--shadow-md); }
+  .shadow-elevated { box-shadow: var(--shadow-lg); }
+  .shadow-glow    { box-shadow: var(--shadow-glow); }
+
+  .text-balance { text-wrap: balance; }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(hsl(214 68% 27% / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(214 68% 27% / 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
