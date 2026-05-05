@@ -6,7 +6,6 @@ import DashboardMockup from "./DashboardMockup";
 const SOLUTIONS = [
   "Satu sistem untuk semua proyek desa — terkonsolidasi & rapi.",
   "Validasi otomatis pada setiap perhitungan AHSP, material, dan upah.",
-  "Audit trail dan kontrol versi — siapa mengubah apa, kapan.",
   "Kolaborasi multi-user real-time tanpa kirim file Excel bolak-balik.",
   "Export laporan PDF instan, siap untuk review & approval.",
   "Insight berbasis AI untuk membantu pengambilan keputusan.",
@@ -20,7 +19,13 @@ const Solution = () => {
           <DashboardMockup />
         </div>
 
-        <div className="order-1 lg:order-2">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+          className="order-1 lg:order-2"
+        >
           <span className="inline-block text-xs font-semibold tracking-widest text-secondary uppercase">
             Solusi
           </span>
@@ -36,10 +41,10 @@ const Solution = () => {
             {SOLUTIONS.map((s, i) => (
               <motion.li
                 key={s}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="flex items-start gap-3"
               >
                 <span className="shrink-0 mt-0.5 h-6 w-6 rounded-full gradient-primary flex items-center justify-center">
@@ -49,7 +54,7 @@ const Solution = () => {
               </motion.li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       </div>
     </SectionWrapper>
   );

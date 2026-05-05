@@ -16,8 +16,11 @@ const Hero = () => {
           <div className="text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              animate={{ opacity: 1, y: [0, -5, 0] }}
+              transition={{ 
+                opacity: { duration: 0.5 },
+                y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+              }}
               className="inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-secondary/10 px-4 py-1.5 text-xs font-semibold text-primary"
             >
               <Sparkles className="h-3.5 w-3.5 text-secondary" />
@@ -89,9 +92,12 @@ const Hero = () => {
 
           {/* Visual */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: [0, -15, 0] }}
+            transition={{ 
+              opacity: { duration: 0.7, delay: 0.3 },
+              y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }
+            }}
             className="relative"
           >
             <DashboardMockup />

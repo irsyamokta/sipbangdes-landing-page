@@ -45,7 +45,13 @@ const FEATURES = [
 const Features = () => {
   return (
     <SectionWrapper id="fitur" className="bg-muted/40">
-      <div className="text-center max-w-2xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.6 }}
+        className="text-center max-w-2xl mx-auto"
+      >
         <span className="inline-block text-xs font-semibold tracking-widest text-secondary uppercase">
           Fitur Utama
         </span>
@@ -55,16 +61,16 @@ const Features = () => {
         <p className="mt-4 text-muted-foreground text-balance">
           Fitur lengkap yang dirancang sesuai praktik perencanaan anggaran pembangunan desa.
         </p>
-      </div>
+      </motion.div>
 
       <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {FEATURES.map((f, i) => (
           <motion.div
             key={f.title}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.06 }}
+            viewport={{ once: false, amount: 0.15 }}
+            transition={{ duration: 0.6, delay: i * 0.08 }}
             whileHover={{ y: -6 }}
             className="group relative rounded-2xl border border-border bg-card p-6 md:p-7 shadow-sm hover:shadow-elegant transition-all overflow-hidden"
           >

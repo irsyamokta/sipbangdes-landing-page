@@ -94,10 +94,10 @@ const ContactCTA = () => {
           <motion.form
             id="form-demo"
             onSubmit={onSubmit}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: false, amount: 0.1 }}
+            transition={{ duration: 0.7 }}
             className="relative rounded-2xl bg-card text-foreground p-6 md:p-8 shadow-elevated w-full max-w-md ml-auto"
           >
             <h3 className="text-xl font-semibold text-primary">

@@ -13,7 +13,13 @@ const STEPS = [
 const HowItWorks = () => {
   return (
     <SectionWrapper id="cara-kerja">
-      <div className="text-center max-w-2xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.6 }}
+        className="text-center max-w-2xl mx-auto"
+      >
         <span className="inline-block text-xs font-semibold tracking-widest text-secondary uppercase">
           Cara Kerja
         </span>
@@ -23,7 +29,7 @@ const HowItWorks = () => {
         <p className="mt-4 text-muted-foreground text-balance">
           Alur kerja yang dirancang sesuai praktik nyata di lapangan.
         </p>
-      </div>
+      </motion.div>
 
       <div className="mt-16 relative">
         {/* connector */}
@@ -33,10 +39,10 @@ const HowItWorks = () => {
           {STEPS.map((step, i) => (
             <motion.div
               key={step.title}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: i * 0.12 }}
               className="relative text-center"
             >
               <div className="relative mx-auto h-20 w-20 rounded-2xl gradient-primary flex items-center justify-center text-primary-foreground shadow-elegant">

@@ -28,7 +28,13 @@ const PROBLEMS = [
 const Problem = () => {
   return (
     <SectionWrapper id="masalah" className="bg-muted/40">
-      <div className="text-center max-w-2xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.6 }}
+        className="text-center max-w-2xl mx-auto"
+      >
         <span className="inline-block text-xs font-semibold tracking-widest text-secondary uppercase">
           Pain Points
         </span>
@@ -38,16 +44,16 @@ const Problem = () => {
         <p className="mt-4 text-muted-foreground text-balance">
           Penyusunan RAB konvensional menyimpan banyak kendala yang menghambat transparansi dan efisiensi.
         </p>
-      </div>
+      </motion.div>
 
       <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5">
         {PROBLEMS.map((p, i) => (
           <motion.div
             key={p.title}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
             className="group relative rounded-2xl border border-border bg-card p-6 md:p-7 shadow-sm hover:shadow-elegant hover:-translate-y-1 transition-all"
           >
             <div className="flex items-start gap-4">

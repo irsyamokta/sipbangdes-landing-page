@@ -14,8 +14,11 @@ const DashboardMockup = () => {
 
       <motion.div
         initial={{ opacity: 0, y: 30, rotateX: 8 }}
-        animate={{ opacity: 1, y: 0, rotateX: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        animate={{ opacity: 1, y: [0, -10, 0], rotateX: 0 }}
+        transition={{ 
+          opacity: { duration: 0.8, delay: 0.2 },
+          y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+        }}
         className="relative rounded-2xl border border-border bg-card shadow-elevated overflow-hidden"
       >
         {/* Browser bar */}
@@ -56,8 +59,11 @@ const DashboardMockup = () => {
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + i * 0.08 }}
+                  animate={{ opacity: 1, y: [0, -4, 0] }}
+                  transition={{ 
+                    opacity: { delay: 0.4 + i * 0.08 },
+                    y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }
+                  }}
                   className="rounded-xl border border-border bg-card p-3"
                 >
                   <div
@@ -89,8 +95,10 @@ const DashboardMockup = () => {
                     <motion.div
                       key={i}
                       initial={{ height: 0 }}
-                      animate={{ height: `${h}%` }}
-                      transition={{ delay: 0.6 + i * 0.04, duration: 0.5 }}
+                      animate={{ height: [`${h * 0.8}%`, `${h}%`, `${h * 0.8}%`] }}
+                      transition={{ 
+                        height: { duration: 3 + i * 0.2, repeat: Infinity, ease: "easeInOut", delay: 0.6 + i * 0.04 }
+                      }}
                       className={`flex-1 rounded-t-md ${i % 3 === 2 ? "bg-secondary" : "bg-primary"}`}
                     />
                   ))}
