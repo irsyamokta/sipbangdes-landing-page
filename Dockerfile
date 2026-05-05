@@ -1,13 +1,13 @@
 # Stage 1: Build
-FROM node:20-alpine AS build
+FROM node:20-slim AS build
 
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install dependencies (using --legacy-peer-deps to avoid resolution issues)
+RUN npm install --legacy-peer-deps
 
 # Copy all source code
 COPY . .
